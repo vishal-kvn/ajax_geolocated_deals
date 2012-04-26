@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<!-- initialize for google maps -->
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		
+		<link rel="stylesheet" type="text/css" href="application.css" />
+		
+		<title>Geo Located Deals</title>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		
+		<!-- Variable for map, current latitude and longitude -->
+		<script>var mymap;</script>
+		<script>var clat; var clng;</script>
+
+		<script type="text/Javascript" src="load_api.js"></script>
+		<script type="text/Javascript" src="geo.js"></script>
+
+	</head>
+	
+	<body onload="initialize()">
+
+	<div id="outer-container">  
+		<div id="header">  
+	    	<h1 style="text-align: center;">GeoLocated Groupon Deals</h1>  
+	    </div>  
+
+		<div style="clear: both"></div>  
+
+	    <div id="left-nav"> 
+			<h2 color="#ffffff">The green marker shows your current location. To get deals near you, click on the Show Deals button.</h2>
+	    	<h2>
+				<!-- <input type="button" id="showdeals" value="Show Deals Near You" /><br/>
+				<input type="button" id="nyc" value="New York Deals" /><br/>
+				<input type="button" id="la" value="Los Angeles Deals" /> -->
+				
+				<button id="drop" onclick="CurrentLocation()">Show current location</button><br />
+				
+				<button id="load" onclick='loadScript("http://api.groupon.com/v2/deals.json?client_id=7dd6695c43abb73bd81f14bf26d427e4e4990cf5&lat=" + clat + "&lng=" + clng + "&radius=20&show=division,title,smallImageUrl,options&callback=parseDeals")'>Get deals around you!!</button><br/>
+				
+				<button id="load" onclick='loadScript("http://api.groupon.com/v2/deals.json?client_id=7dd6695c43abb73bd81f14bf26d427e4e4990cf5&lat=40.714623&lng=-74.006605&radius=20&show=division,title,smallImageUrl,options&callback=parseDeals")'>New York Deals</button><br/>
+				
+				<button id="load" onclick='loadScript("http://api.groupon.com/v2/deals.json?client_id=7dd6695c43abb73bd81f14bf26d427e4e4990cf5&lat=34.0522222&lng=-118.2427778&radius=20&show=division,title,smallImageUrl,options&callback=parseDeals")'>Los Angeles Deals</button><br/>
+				</body>
+				
+			</h2>  
+	    </div>  
+
+		<div id="map"></div>
+
+	    <div style="clear: both"></div>  
+
+	</div>
+	
+</html>
+
+
+
+
+
