@@ -10,6 +10,8 @@ function parseDeals (json) {
 		var title, expiery;
 		var deal = deals[i];
 		var lat, lng;
+		var image_url = deal.smallImageUrl;
+		console.log("Image url : " + image_url);
 
 		optionsloop:
 		for (var j=0; j < deal.options.length; j++)
@@ -32,14 +34,13 @@ function parseDeals (json) {
 							}
 
 		var point = new google.maps.LatLng(parseFloat(lat),parseFloat(lng));
-		var html='<strong>'+title+'</strong.><br />'+"ExpiresAt : "+expiery;
+		var html='<img src='+image_url+'><br/>'+title+'<br />'+"ExpiresAt : "+expiery;
 		
 		addMarker(point, html);
 		
 	}
 
 }
-
 
 // function to make cross domain call
 	function loadScript(url)

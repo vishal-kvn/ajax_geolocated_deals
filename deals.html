@@ -29,15 +29,12 @@
 		<div style="clear: both"></div>  
 
 	    <div id="left-nav"> 
-			<h2 color="#ffffff">The green marker shows your current location. To get deals near you, click on the Show Deals button.</h2>
+			<h2 color="#ffffff">Click on the Show current location button to get your current location and to get deals near you, click the Deals button.</h2>
 	    	<h2>
-				<!-- <input type="button" id="showdeals" value="Show Deals Near You" /><br/>
-				<input type="button" id="nyc" value="New York Deals" /><br/>
-				<input type="button" id="la" value="Los Angeles Deals" /> -->
 				
 				<button id="drop" onclick="CurrentLocation()">Show current location</button><br />
 				
-				<button id="load" onclick='loadScript("http://api.groupon.com/v2/deals.json?client_id=7dd6695c43abb73bd81f14bf26d427e4e4990cf5&lat=" + clat + "&lng=" + clng + "&radius=20&show=division,title,smallImageUrl,options&callback=parseDeals")'>Get deals around you!!</button><br/>
+				<button id="load" onclick='loadScript("http://api.groupon.com/v2/deals.json?client_id=7dd6695c43abb73bd81f14bf26d427e4e4990cf5&lat=" + clat + "&lng=" + clng + "&radius=20&show=division,title,smallImageUrl,options&callback=parseDeals")'>Deals</button><br/>
 				
 				<button id="load" onclick='loadScript("http://api.groupon.com/v2/deals.json?client_id=7dd6695c43abb73bd81f14bf26d427e4e4990cf5&lat=40.714623&lng=-74.006605&radius=20&show=division,title,smallImageUrl,options&callback=parseDeals")'>New York Deals</button><br/>
 				
